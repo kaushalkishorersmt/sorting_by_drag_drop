@@ -4,14 +4,15 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all
+    @questions = Question.order(:position)
   end
 
   def sort
-
     params[:question].each_with_index do |id, index|
       Question.where(id: id).update_all(position: index + 1)
     end
+
+    head :ok
   end
 
   # GET /questions/1

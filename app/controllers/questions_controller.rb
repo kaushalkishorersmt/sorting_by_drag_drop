@@ -7,6 +7,13 @@ class QuestionsController < ApplicationController
     @questions = Question.all
   end
 
+  def sort
+
+    params[:question].each_with_index do |id, index|
+      Question.where(id: id).update_all(position: index + 1)
+    end
+  end
+
   # GET /questions/1
   # GET /questions/1.json
   def show

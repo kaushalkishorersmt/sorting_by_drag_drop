@@ -10,8 +10,11 @@
 - https://github.com/twbs/bootstrap-rubygem
 
 gem 'bootstrap', '~> 4.0.0.beta'
+
 gem 'jquery-rails'
+
 gem 'jquery-ui-rails'
+
 gem 'acts_as_list'
 
 

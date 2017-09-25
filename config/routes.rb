@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :questions
+  resources :questions do
+    collection do
+      patch :sort
+    end
+  end
+  
   root to: 'questions#index'
 
 end
